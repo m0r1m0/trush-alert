@@ -1,7 +1,6 @@
 import * as React from 'react';
-import AppBar from '@material-ui/core/AppBar';
-import Typography from '@material-ui/core/Typography';
-import Toolbar from '@material-ui/core/Toolbar';
+import { AppBar, Typography, Toolbar, IconButton } from '@material-ui/core';
+import MenuIcon from '@material-ui/icons/Menu';
 
 class App extends React.Component {
   public render() {
@@ -9,8 +8,11 @@ class App extends React.Component {
       <div className="App">
         <AppBar position="static" color="default">
           <Toolbar>
+            <IconButton color="inherit">
+              <MenuIcon />
+            </IconButton>
             <Typography variant="title" color="inherit">
-              Photos
+              Gomi
             </Typography>
           </Toolbar>
         </AppBar>
