@@ -6,7 +6,7 @@ class App extends React.Component {
   public render() {
     return (
       <div className="App">
-        <AppBar position="static" color="default">
+        <AppBar color="default">
           <Toolbar>
             <IconButton color="inherit">
               <MenuIcon />
