@@ -1,4 +1,6 @@
 import * as React from 'react';
+import styled from 'styled-components';
+
 import { AppBar, Typography, Toolbar, IconButton } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 
@@ -8,9 +10,9 @@ const AppHeader: React.SFC<AppHeaderProps> = () => {
   return (
     <AppBar color="default">
       <Toolbar>
-        <IconButton color="inherit">
+        <MenuButton>
           <MenuIcon />
-        </IconButton>
+        </MenuButton>
         <Typography variant="title" color="inherit">
           Gomi
         </Typography>
@@ -18,5 +20,12 @@ const AppHeader: React.SFC<AppHeaderProps> = () => {
     </AppBar>
   );
 };
+
+const MenuButton = styled(IconButton)`
+  && {
+    margin-left: -12px;
+    margin-right: 20px;
+  }
+`;
 
 export default AppHeader;
