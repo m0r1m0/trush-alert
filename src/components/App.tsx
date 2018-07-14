@@ -1,7 +1,9 @@
 import * as React from 'react';
 import AppHeader from './organisms/AppHeader';
 
-class App extends React.Component {
+interface Props {}
+
+class App extends React.Component<Props, object> {
   public render() {
     return (
       <div className="App">
