@@ -1,24 +1,20 @@
 import { reducerWithInitialState } from 'typescript-fsa-reducers';
-import { layoutActions } from '../actions/layoutAction';
+import { LayoutActions } from '../actions/layoutAction';
 
-export interface layoutState {
+export interface LayoutState {
   isMenuOpened: boolean;
 }
 
-const initialState: layoutState = {
+const initialState: LayoutState = {
   isMenuOpened: false,
 };
 
-export const layoutReducer = reducerWithInitialState(initialState)
-  .case(layoutActions.openMenu, state => {
+export const layoutReducer = reducerWithInitialState(initialState).case(
+  LayoutActions.toggleMenu,
+  (state, open) => {
     return {
       ...state,
-      isMenuOpened: true,
+      isMenuOpened: open,
     };
-  })
-  .case(layoutActions.closeMenu, state => {
-    return {
-      ...state,
-      isMenuOpened: false,
-    };
-  });
+  }
+);
