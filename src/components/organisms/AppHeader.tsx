@@ -18,7 +18,7 @@ const MenuButton = styled(IconButton)`
 
 export const AppHeader: React.SFC<AppHeaderProps> = (props: AppHeaderProps) => {
   return (
-    <AppBar color="default">
+    <AppBar position="static" color="default">
       <Toolbar>
         <MenuButton onClick={() => props.toggleMenu(true)}>
           <MenuIcon />
