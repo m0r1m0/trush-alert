@@ -23,12 +23,7 @@ export const App: React.SFC<AppProps> = (props: AppProps) => {
       <AppHeader toggleMenu={props.toggleMenu} />
       <AppDrawer {...props} />
       <PageContents>
-        <Grid
-          container={true}
-          spacing={16}
-          alignItems="center"
-          justify="center"
-        >
+        <Grid container={true} alignItems="center" justify="center">
           <Grid item={true} xs={12} sm={6}>
             <TrushCard />
           </Grid>
