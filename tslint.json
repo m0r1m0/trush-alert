@@ -1,5 +1,13 @@
 {
-  "extends": ["tslint-react", "tslint-config-prettier"],
+  "extends": [
+    "tslint-config-standard",
+    "tslint-react",
+    "tslint-config-prettier"
+  ],
+  "rules": {
+    "jsx-no-lambda": false,
+    "no-floating-promises": false
+  },
   "linterOptions": {
     "exclude": ["config/**/*.js", "node_modules/**/*.ts"]
   }
