@@ -5,8 +5,8 @@ import { LayoutState } from '../store/reducers/layoutReducer';
 import { LayoutActions } from '../container/App';
 import { AppDrawer } from './organisms/AppDrawer';
 import { CssBaseline, Grid } from '@material-ui/core';
-import styled from 'styled-components';
 import { TrushCard } from './organisms/TrushCard';
+import styled from 'styled-components';
 
 interface OwnProps {}
 

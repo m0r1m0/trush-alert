@@ -3,9 +3,9 @@ import { Card, CardMedia, CardContent, Typography } from '@material-ui/core';
 import styled from 'styled-components';
 
 const TrushImage = styled(CardMedia)`
-  padding-top: 90%;
+  padding-top: 60%;
   && {
-    background-size: 70%;
+    background-size: 50%;
   }
 `;
 
