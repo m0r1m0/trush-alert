@@ -5,11 +5,9 @@ import { AppBar, Typography, Toolbar, IconButton } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import { LayoutActions } from '../../container/App';
 
-interface AppHeaderProps {
-  isMenuOpened: boolean;
-}
+interface OwnProps {}
 
-type Props = AppHeaderProps & LayoutActions;
+type AppHeaderProps = OwnProps & LayoutActions;
 
 const MenuButton = styled(IconButton)`
   && {
@@ -18,7 +16,7 @@ const MenuButton = styled(IconButton)`
   }
 `;
 
-export const AppHeader: React.SFC<Props> = (props: Props) => {
+export const AppHeader: React.SFC<AppHeaderProps> = (props: AppHeaderProps) => {
   return (
     <AppBar color="default">
       <Toolbar>
