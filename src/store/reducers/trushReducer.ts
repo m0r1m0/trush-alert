@@ -4,7 +4,7 @@ export interface TrushState {
   trushInfo: Trush[];
 }
 
-interface Trush {
+export interface Trush {
   id: number;
   areaFirst: string;
   area: string;

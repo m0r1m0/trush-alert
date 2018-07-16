@@ -7,25 +7,28 @@ import { AppDrawer } from './organisms/AppDrawer';
 import { CssBaseline, Grid } from '@material-ui/core';
 import { TrushCard } from './organisms/TrushCard';
 import styled from 'styled-components';
+import { TrushState } from '../store/reducers/trushReducer';
 
 interface OwnProps {}
 
-type AppProps = OwnProps & LayoutState & LayoutActions;
+type AppProps = OwnProps & LayoutState & LayoutActions & TrushState;
 
 const PageContents = styled.div`
   margin: 15px;
 `;
 
 export const App: React.SFC<AppProps> = (props: AppProps) => {
+  const { isMenuOpened, toggleMenu, trushInfo } = props;
+
   return (
     <div className="App">
       <CssBaseline />
-      <AppHeader toggleMenu={props.toggleMenu} />
-      <AppDrawer {...props} />
+      <AppHeader toggleMenu={toggleMenu} />
+      <AppDrawer isMenuOpened={isMenuOpened} toggleMenu={toggleMenu} />
       <PageContents>
         <Grid container={true} alignItems="center" justify="center">
           <Grid item={true} xs={12} sm={6}>
-            <TrushCard />
+            <TrushCard trushInfo={trushInfo} />
           </Grid>
         </Grid>
       </PageContents>

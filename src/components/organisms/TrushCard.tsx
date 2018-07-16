@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { Card, CardMedia, CardContent, Typography } from '@material-ui/core';
 import styled from 'styled-components';
+import { TrushState } from '../../store/reducers/trushReducer';
+import { getTodayTrush } from '../../util/getTodayTrush';
 
 const TrushImage = styled(CardMedia)`
   padding-top: 60%;
@@ -9,7 +11,8 @@ const TrushImage = styled(CardMedia)`
   }
 `;
 
-export const TrushCard: React.SFC<{}> = props => {
+export const TrushCard: React.SFC<TrushState> = props => {
+  const trushData = props.trushInfo.filter(trush => trush.id === 95)[0];
   return (
     <Card>
       <TrushImage
@@ -18,7 +21,7 @@ export const TrushCard: React.SFC<{}> = props => {
       />
       <CardContent>
         <Typography align="center" variant="headline" component="h2">
-          普通ごみ
+          {getTodayTrush(trushData)}
         </Typography>
       </CardContent>
     </Card>
