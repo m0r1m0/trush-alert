@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Card, CardMedia, CardContent, Typography } from '@material-ui/core';
 import styled from 'styled-components';
 import { TrushState } from '../../store/reducers/trushReducer';
-import { getTodayTrush } from '../../util/getTodayTrush';
+import { getTodayTrush } from '../../util/getTodayTrushType';
 
 const TrushImage = styled(CardMedia)`
   padding-top: 60%;
