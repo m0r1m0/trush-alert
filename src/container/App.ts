@@ -18,6 +18,7 @@ const mapDispatchToProps = (dispatch: Dispatch) => {
 const mapStateToProps = (state: AppState) => {
   return {
     ...state.layout,
+    ...state.trush,
   };
 };
 
