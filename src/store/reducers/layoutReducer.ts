@@ -11,12 +11,16 @@ const initialState: LayoutState = {
   detailExpanded: false,
 };
 
-export const layoutReducer = reducerWithInitialState(initialState).case(
-  LayoutActions.toggleMenu,
-  (state, open) => {
+export const layoutReducer = reducerWithInitialState(initialState)
+  .case(LayoutActions.toggleMenu, (state, open) => {
     return {
       ...state,
       isMenuOpened: open,
     };
-  }
-);
+  })
+  .case(LayoutActions.toggleExpand, (state, expand) => {
+    return {
+      ...state,
+      detailExpanded: expand,
+    };
+  });
