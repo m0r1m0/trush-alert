@@ -3,11 +3,13 @@ import styled from 'styled-components';
 
 import { AppBar, Typography, Toolbar, IconButton } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
-import { LayoutActions } from '../../container/App';
+import { Action } from 'typescript-fsa';
 
-interface OwnProps {}
+interface OwnProps {
+  toggleMenu: (open: boolean) => Action<boolean>;
+}
 
-type AppHeaderProps = OwnProps & LayoutActions;
+type AppHeaderProps = OwnProps;
 
 const MenuButton = styled(IconButton)`
   && {

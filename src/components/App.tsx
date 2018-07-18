@@ -18,7 +18,13 @@ const PageContents = styled.div`
 `;
 
 export const App: React.SFC<AppProps> = (props: AppProps) => {
-  const { isMenuOpened, toggleMenu, trushInfo } = props;
+  const {
+    isMenuOpened,
+    toggleMenu,
+    trushInfo,
+    toggleExpand,
+    detailExpanded,
+  } = props;
 
   return (
     <div className="App">
@@ -28,7 +34,11 @@ export const App: React.SFC<AppProps> = (props: AppProps) => {
       <PageContents>
         <Grid container={true} alignItems="center" justify="center">
           <Grid item={true} xs={12} sm={6}>
-            <TrushCard trushInfo={trushInfo} />
+            <TrushCard
+              trushInfo={trushInfo}
+              detailExpanded={detailExpanded}
+              toggleExpand={toggleExpand}
+            />
           </Grid>
         </Grid>
       </PageContents>
