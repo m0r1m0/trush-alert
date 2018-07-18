@@ -27,10 +27,11 @@ type TrushCardProps = TrushCardAction & TrushState & TrushCardState;
 interface TrushType {
   name: string;
   image: string;
+  dischargeMethod: string;
 }
 
 interface ExpandButtonProps {
-  expanded: boolean;
+  expanded: number;
 }
 
 const TrushImage = styled(CardMedia)`
@@ -42,7 +43,7 @@ const TrushImage = styled(CardMedia)`
 
 const ExpandButton = styled(IconButton)`
   transform: rotate(
-    ${(props: ExpandButtonProps) => (props.expanded ? 180 : 0)}deg
+    ${(props: ExpandButtonProps) => (props.expanded === 1 ? 180 : 0)}deg
   );
   && {
     transition: transform 150ms cubic-bezier(0.4, 0, 1, 1) 0ms;
@@ -64,7 +65,7 @@ export const TrushCard: React.SFC<TrushCardProps> = props => {
       </CardContent>
       <CardActions disableActionSpacing={true}>
         <ExpandButton
-          expanded={detailExpanded}
+          expanded={detailExpanded ? 1 : 0}
           onClick={() => toggleExpand(!detailExpanded)}
         >
           <ExpandMore />
@@ -72,7 +73,7 @@ export const TrushCard: React.SFC<TrushCardProps> = props => {
       </CardActions>
       <Collapse in={detailExpanded} timeout="auto">
         <CardContent>
-          <p>Collapse Content</p>
+          <Typography>{trushType.dischargeMethod}</Typography>
         </CardContent>
       </Collapse>
     </Card>
