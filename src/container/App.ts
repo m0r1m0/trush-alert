@@ -7,11 +7,14 @@ import App from '../components/App';
 
 export interface LayoutActions {
   toggleMenu: (open: boolean) => Action<boolean>;
+  toggleExpand: (expand: boolean) => Action<boolean>;
 }
 
 const mapDispatchToProps = (dispatch: Dispatch) => {
   return {
     toggleMenu: (open: boolean) => dispatch(LayoutActions.toggleMenu(open)),
+    toggleExpand: (expand: boolean) =>
+      dispatch(LayoutActions.toggleExpand(expand)),
   };
 };
 
